@@ -1,8 +1,13 @@
-import { NgModule } from '@angular/core';
-import { ChildcpmComponent } from './childcpm/childcpm';
+import {NgModule} from '@angular/core';
+import {InputcpmComponent} from './inputcpm/inputcpm';
+import { OutputcpmComponent } from './outputcpm/outputcpm';
+
 @NgModule({
-	declarations: [ChildcpmComponent],
-	imports: [],
-	exports: [ChildcpmComponent]
+    declarations: [InputcpmComponent,
+    OutputcpmComponent],
+    imports: [],
+    exports: [InputcpmComponent,
+    OutputcpmComponent]
 })
-export class ComponentsModule {}
+export class ComponentsModule {
+}

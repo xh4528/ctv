@@ -1,16 +1,10 @@
 import {Component, Input} from '@angular/core';
 
-/**
- * Generated class for the ChildcpmComponent component.
- *
- * See https://angular.io/api/core/Component for more info on Angular
- * Components.
- */
 @Component({
-    selector: 'childcpm',
-    templateUrl: 'childcpm.html'
+    selector: 'inputcpm',
+    templateUrl: 'inputcpm.html'
 })
-export class ChildcpmComponent {
+export class InputcpmComponent {
     /**
      * 两种方式定义Input
      * inputData:子组件接收数据属性名
@@ -36,7 +30,7 @@ export class ChildcpmComponent {
     }
 
     /**
-     * 执行父组件的方法
+     * 执行父组件的方法,并传递参数(父组件无法保存传递过去的值,因为子组件调用父组件的方法时,里面的this是子组件)
      */
     exeFunc() {
         let val = {

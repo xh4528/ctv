@@ -6,6 +6,13 @@
 
 <ion-content padding>
 	<ion-label>父组件-使用input获取和执行父子组件数据和方法</ion-label>
-	<childcpm [inputData]="data1" [inputFunc]="FatherFun1"></childcpm>
+	<!--
+	[inputData]="data1"  传递数据
+	[inputFunc]="FatherFun1"    子组件要调用的方法
+	-->
+	<inputcpm [inputData]="data1" [inputFunc]="FatherFun1"></inputcpm>
+
+	<!--(outputData)="exeFun($event)"   子组件要调用的方法,$event事件对象用于接收参数-->
+	<outputcpm (outputData)="exeFun($event)"></outputcpm>
 
 </ion-content>
