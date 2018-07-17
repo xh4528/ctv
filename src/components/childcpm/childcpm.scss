@@ -1,0 +1,19 @@
+childcpm {
+	div {
+		border: 1px solid #ccc;
+		padding: 10px;
+
+		button {
+			border: 1px solid #cccccc;
+			background-color: #fff;
+			color: dodgerblue;
+			padding: 3px;
+			margin-bottom: 5px;
+		}
+		button:active {
+			background-color: dodgerblue;
+			color: #ffffff;
+		}
+	}
+
+}
