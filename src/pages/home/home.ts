@@ -1,4 +1,4 @@
-import {Component} from '@angular/core';
+import {Component, ViewChild} from '@angular/core';
 import {NavController} from 'ionic-angular';
 
 @Component({
@@ -7,6 +7,12 @@ import {NavController} from 'ionic-angular';
 })
 export class HomePage {
     data1: any;
+
+    /**
+     * someData:给子组件传递时候的组件名
+     * internalData:调用的变量名
+     */
+    @ViewChild('someData') internalData;
 
     constructor(public navCtrl: NavController) {
         this.data1 = {
@@ -32,5 +38,9 @@ export class HomePage {
      */
     exeFun(e: any) {
         console.log(e, "我是父组件的方法");
+    }
+
+    getViewChildData() {
+        console.log(this.internalData.text);
     }
 }

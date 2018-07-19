@@ -13,7 +13,7 @@ export class OutputcpmComponent {
     }
 
     /**
-     * 用于广播子组件数据
+     * 用于广播子组件事件
      */
     exeFun() {
         let childData = {

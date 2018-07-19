@@ -15,4 +15,9 @@
 	<!--(outputData)="exeFun($event)"   子组件要调用的方法,$event事件对象用于接收参数-->
 	<outputcpm (outputData)="exeFun($event)"></outputcpm>
 
+	<viewchildcpm #someData></viewchildcpm>
+	<button ion-button (click)="someData.doFunc()">调用子组件的方法</button>
+	<button ion-button (click)="getViewChildData()">获取子组件的数据</button>
+
+
 </ion-content>
