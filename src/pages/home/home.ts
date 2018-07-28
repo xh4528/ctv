@@ -14,11 +14,16 @@ export class HomePage {
      */
     @ViewChild('someData') internalData;
 
+    //HTML代码
+    html: string;
+
     constructor(public navCtrl: NavController) {
         this.data1 = {
             "firstname": "张",
             "lastname": "三"
-        }
+        };
+        this.html = `<h1>标签上使用[innerHTML]绑定数据变量,来将后台数据转成标签样式</h1>`;
+
     }
 
     /**

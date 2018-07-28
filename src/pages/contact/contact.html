@@ -1,17 +1,45 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>
-      Contact
-    </ion-title>
-  </ion-navbar>
+<ion-header xmlns="">
+	<ion-navbar>
+		<ion-title>
+			Contact
+		</ion-title>
+	</ion-navbar>
 </ion-header>
 
 <ion-content>
-  <ion-list>
-    <ion-list-header>Follow us on Twitter</ion-list-header>
-    <ion-item>
-      <ion-icon name="ionic" item-start></ion-icon>
-      @ionicframework
-    </ion-item>
-  </ion-list>
+	<div padding>
+		<vg-player (onPlayerReady)="onPlayerReady($event)">
+			<!--大播放箭头-->
+			<vg-overlay-play></vg-overlay-play>
+			<!--缓冲-->
+			<vg-buffering></vg-buffering>
+			<!--控制条     [vgAutohideTime]        自动消失时间  [vgAutohide]="true"     自动隐藏-->
+			<vg-controls [vgAutohideTime]="3">
+				<!--暂停/播放按钮-->
+				<!--<vg-play-pause></vg-play-pause>-->
+				<!--当前播放时间-->
+				<vg-time-display [vgProperty]="'current'"></vg-time-display>
+				<!--视频底部状态条 [vgSlider]="false"      是否点击进度条时暂停播放-->
+				<vg-scrub-bar [vgSlider]="false">
+					<!--当前进度条 [vgSlider]="true"     是否有圆点-->
+					<vg-scrub-bar-current-time [vgSlider]="true"></vg-scrub-bar-current-time>
+					<!--缓冲进度条-->
+					<vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+				</vg-scrub-bar>
+				<!--总播放时间-->
+				<vg-time-display [vgProperty]="'total'"></vg-time-display>
+				<!--静音按钮-->
+				<vg-mute></vg-mute>
+				<!--全屏按钮-->
+				<vg-fullscreen></vg-fullscreen>
+			</vg-controls>
+			<!--autoplay:  自动播放   playsinline webkit-playsinline 自动全屏-->
+			<video [vgMedia]="media" #media id="media1" crossorigin playsinline webkit-playsinline><!--preload="auto"  自动加载视频-->
+				<source [src]="src" type="video/mp4">
+			</video>
+		</vg-player>
+	</div>
+
 </ion-content>
+
+
